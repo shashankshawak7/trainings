@@ -7,7 +7,8 @@ import sys
 import time
 import requests
 from datetime import datetime, timedelta
-
+import seaborn as sns 
+import matplotlib.pyplot as plt
 ##########################################################################################
 timestr = time.strftime("%Y%m%d")
 mydate=time.strftime("%d%m%Y")
@@ -92,10 +93,6 @@ for index,values in enumerate(list(company_names)):
 company=int(input().strip())-1
 company_selected=company_names[company]
 companydf=maindataFrameAnalysis.loc[maindataFrameAnalysis['company_name']==company_selected]
-import seaborn as sns 
-import matplotlib.pyplot as plt
-
-%matplotlib inline
 plt.figure(figsize=(100, 50))
 sns.set(style="ticks", color_codes=True)
 companydf.plot(x='Date',y='close_diff',kind='bar')
@@ -112,3 +109,4 @@ sns.regplot(companydf.close_diff,companydf.voldiff)
 sns.lmplot(x='close_diff',y='voldiff',data=companydf, hue="Date")
 sns.distplot(companydf.close_diff)
 sns.distplot(companydf.voldiff,bins=10)
+plt.show()
