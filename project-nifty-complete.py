@@ -19,7 +19,7 @@ if datetime.now().strftime('%A')=='Saturday':
 elif datetime.now().strftime('%A')=='Sunday': 
     modified_date = date + timedelta(days=-2)
 else:
-    modified_date=s
+    modified_date=datetime.now()
 correct_date=datetime.strftime(modified_date, "%d%m%Y")
 
 def data_Downloader(url,filename):
