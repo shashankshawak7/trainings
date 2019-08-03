@@ -1,3 +1,2 @@
-# trainings
-## python Trainings
-#### This Repository contains the python sessions for Data Science.
+# python-Learning-shawak
+python bootcamp notes by me
